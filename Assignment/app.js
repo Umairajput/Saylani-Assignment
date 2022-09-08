@@ -1,95 +1,98 @@
-var blue = document.getElementById("text")
-var mainDiv = document.getElementById("main")
-function blueImg() {
-    blue.style.backgroundImage = "url(blue.jpeg)"
-    mainDiv.style.backgroundImage = "url(blue.jpeg)"
+
+function Call() {
+    var getName = document.getElementById("name").value
+
+    var nameValidation = /^.{5,}$/.test(getName)
+    if (nameValidation === false) {
+        swal("The name  must be at least five characters")
+    } else {
+        localStorage.setItem("name", getName)
+    }
+    var getFatherName = document.getElementById("father_name").value
+    var fatherNameValidation = /^.{6,}$/.test(getFatherName)
+    if (fatherNameValidation === false) {
+        swal("The father name  must be at least six characters")
+    } else {
+        localStorage.setItem("father name", getFatherName)
+    }
+    var email = document.getElementById("email").value
+    var emailValidation = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+    if (emailValidation === false) {
+        swal("Email is invalid")
+    } else {
+        localStorage.setItem("email", email)
+    }
+    var number = document.getElementById("number").value
+    var numberValidation = /^((\+92)?(0092)?(92)?(0)?)(3)([0-9]{9})$/.test(number)
+    if (numberValidation === false) {
+        swal("Phone number is invalid")
+    } else {
+        localStorage.setItem("phone number", number)
+    }
+    var fatherCnic = document.getElementById("father_cnic").value
+    var fatherCnicValidation = /^[0-9]{5}-[0-9]{7}-[0-9]$/.test(fatherCnic)
+    if (fatherCnicValidation === false) {
+        swal("your father CNIC number is invalid")
+    } else {
+        localStorage.setItem("father CNIC", fatherCnic)
+    }
+    var getDate = document.getElementById("getDate").value
+    if (getName === "" || getFatherName === "" || email === "" || number === "" || fatherCnic === "" || getDate === "") {
+        swal("Please fill all values")
+    }
+    else {
+        localStorage.setItem("Date of birth", getDate)
+    }
+    // var name = localStorage.getItem("name")
+    // console.log(name)
+    // var para = document.getElementById("para")
+    // console.log(para.innerHTML = name)
+    // console.log(para)
 }
-var red = document.getElementById("text")
-function redImg() {
-    red.style.backgroundImage = "url(red.jpeg)"
-    mainDiv.style.backgroundImage = "url(red.jpeg)"
+function newPage() {
+    var newPage = window.open("index1.html")
+    `<p>
+        Hello world
+    </p>`
+    var name = localStorage.getItem("name")
+    // console.log(name)
+    // var para = document.getElementById("para")
+    // console.log(para.innerHTML = name)
+    // console.log(name)
+    // var para = document.getElementById("para")
+    // para.innerHTML = name
+    // name.innerHTML = newPage
+    // console.log(name)
 }
-var sky = document.getElementById("text")
-function skyBlue () {
-    sky.style.backgroundImage = "url(sky-blue.jpeg)"
-    mainDiv.style.backgroundImage = "url(sky-blue.jpeg)"
+function callMe() {
+    // `<p>
+    //     Hello world
+    // </p>`
+    var name = localStorage.getItem("name")
+    var paragraph = document.getElementById("paragraph")
+    paragraph.innerHTML = name
+    var faterName = localStorage.getItem("father name")
+    var fName = document.getElementById("fatherName")
+    fName.innerHTML = faterName
+    var emailResult = document.getElementById("emailResult")
+    var getEmail = localStorage.getItem("email")
+    emailResult.innerHTML = getEmail
 }
-var green = document.getElementById("text")
-function greenClr () {
-    green.style.backgroundImage = "url(green.jpeg)"
-    mainDiv.style.backgroundImage = "url(green.jpeg)"
-}
-var peach = document.getElementById("text")
-function peachClr () {
-    peach.style.backgroundImage = "url(peach.jpeg)"
-    mainDiv.style.backgroundImage = "url(peach.jpeg)"
-}
-var purple = document.getElementById("text")
-function purpleClr () {
-    purple.style.backgroundImage = "url(purple.jpeg)"
-    mainDiv.style.backgroundImage = "url(purple.jpeg)"
-}
-function call() {
-    var text = document.getElementById("text")
-    text.style.display = "none"
-    var ans = text.value
-    var postDiv = document.createElement("div")
-    var postText = document.createTextNode(ans)
-    postDiv.appendChild(postText)
-    var main = document.getElementById("main")
-    main.innerHTML = postDiv.innerHTML
-    main.style.height = "150px"
-    main.style.marginLeft = "12px"
-    main.style.borderRadius = "8px"
-    main.style.width = "380"
-    main.style.color = "white"
-    var btn = document.getElementById("btn")
-    btn.style.display = "none"
-    var head = document.getElementById("head")
-    head.style.display = "none"
-    var pic = document.getElementById("pics")
-    pic.style.display = "none"
-    var span = document.createElement("span")
-    var likeText = document.createTextNode("thumb_up_off_alt")
-    var like = document.createAttribute("class")
-    span.setAttributeNode(like)
-    span.appendChild(likeText)
-    var spn = document.getElementById("spn")
-    spn.classList.add("material-icons");
-    spn.style.borderRadius = "5px"
-    spn.innerHTML = span.innerHTML
-    var span_1 = document.createElement("span")
-    var commentText = document.createTextNode(" comment")
-    var comment = document.createAttribute("class")
-    span_1.setAttributeNode(comment)
-    span_1.appendChild(commentText)
-    var spn_1 = document.getElementById("span-1")
-    spn_1.classList.add("material-icons");
-    spn_1.style.borderRadius = "5px"
-    spn_1.innerHTML = span_1.innerHTML
-    var img1 = document.getElementById("img_1") 
-    var createSrc = document.createAttribute("src")
-    img1.srcList
-}
-function likeButton() {
-    spn.style.color = "blue"
-}
-function button() {
-    alert("Please Add something and try again")
-}
-var sky = document.getElementById("text")
-function skyImg() {
-    sky.style.backgroundImage = "url(sky-blue.jpeg)"
-}
-var green = document.getElementById("text")
-function greenImg() {
-    green.style.backgroundImage = "url(green.jpeg)"
-}
-var peach = document.getElementById("text")
-function peachImg() {
-    peach.style.backgroundImage = "url(peach.jpeg)"
-}
-var purple = document.getElementById("text")
-function purpleImg() {
-    purple.style.backgroundImage = "url(purple.jpeg)"
-}
+
+// var getQualification = document.getElementById("getQualification").value
+// localStorage.setItem("Qualification",getQualification)
+// var cnic = document.getElementById("cnic").value
+// var cnicValidation = /^[0-9]{5}-[0-9]{7}-[0-9]$/.test(cnic)
+// if (cnicValidation === false) {
+//     alert("your CNIC number is invalid")
+// }else {
+//     localStorage.setItem("CNIC NO", cnic)
+// }
+// var getCityOptions = document.getElementById("cityOptions").value
+// localStorage.setItem("City",getCityOptions)
+//     var getCourseOptions = document.getElementById("courseOptions").value
+// localStorage.setItem("City",getCourseOptions)
+//     var getGenderOptions = document.getElementById("genderOptions").value
+// localStorage.setItem("Gender",getGenderOptions)
+// var getAddress  = document.getElementById("getAddress").value
+// localStorage.setItem("Address",getAddress)
